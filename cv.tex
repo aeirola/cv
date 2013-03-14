@@ -1,107 +1,160 @@
-% LaTeX resume using res.cls
-\documentclass[line,margin]{res} 
-\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
+﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Curriculum Vitae
+% LaTeX Template
+% Version 1.0 (18/7/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Stefano (http://stefano.italians.nl/)
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% The main font used in this template, Adobe Garamond Pro, does not 
+% come with Windows by default. You will need to download it in
+% order to get an output as in the preview PDF. Otherwise, change this 
+% font to one that does come with Windows or comment out the font line 
+% to use the default LaTeX font.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Language stuff for finnish
-\usepackage[finnish]{babel}
-%\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[pdftex,colorlinks,urlcolor=black]{hyperref}
-\urlstyle{same}
-\usepackage{datetime}
+\documentclass[a4paper, oneside, final]{scrartcl} % Paper options using the scrartcl class
 
-\pdfinfo{
- 		/Author (Axel Eirola)
-        /Title (Curriculum Vitae)
-		/CreationDate (D:20080114150700)
-		/ModDate (D:\pdfdate)
-		/Subject (CV)
-		/Keywords (Axel Eirola;CV)
+\usepackage{scrpage2} % Provides headers and footers configuration
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage{marvosym} % Allows the use of symbols
+\usepackage{tabularx,colortbl} % Advanced table configurations
+\usepackage{fontspec} % Allows font customization
+\usepackage{hyperref} % For links
+
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont{Sabon} % Main document font
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
+
+\pagestyle{scrheadings} % Print the headers and footers on all pages
+
+\addtolength{\voffset}{-0.5in} % Adjust the vertical offset - less whitespace at the top of the page
+\addtolength{\textheight}{3cm} % Adjust the text height - less whitespace at the bottom of the page
+
+\newcommand{\gray}{\rowcolor[gray]{.90}} % Custom highlighting for the work experience and education sections
+
+%----------------------------------------------------------------------------------------
+%  FOOTER SECTION
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\headfont}{\normalfont\rmfamily\scshape} % Font settings for footer
+
+\cofoot{
+\addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
+
+Aleksis Kiven katu 74 B 23 {\large\textperiodcentered} Helsinki {\large\textperiodcentered} 00520 Finland\\ % Your mailing address
+{\Large\Letter} \href{mailto:axel.eirola@iki.fi}{axel.eirola@iki.fi} \ {\Large\Telefon} (040) 726-5959\\ % Your email address and phone number
+{\Large\Mundus} \href{http://iki.fi/aeirola}{http://iki.fi/aeirola}
 }
 
-% Expand left margin to make space for all long finnish words
-\sectionwidth=1.5in
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\name{Axel Eirola}
-% \address used twice to have two lines of address
-\address{Servinkuja 5B52, 02150 Espoo. 040-7265959}
-\address{\href{mailto:axel.eirola@gmail.com}{axel.eirola@gmail.com} \url{http://nonix.dy.fi/}}
+\begin{center} % Center everything in the document
 
- 
-\begin{resume}
- 
+%----------------------------------------------------------------------------------------
+%  HEADER SECTION
+%----------------------------------------------------------------------------------------
 
-\section{KOULUTUS} 
-		{\sl Diploomi-Insinööritutkinnon opiskelija,} Teknillinen korkeakoulu, \hfill Syksy 2009-- \\
-		pääaine ohjelmistojärjestelmät, sivuaine laskennallinen tiede ja tekniikka, 66/120 opinto\-pistettä.
-		
-		{\sl Tekniikan Kandidaatti,} Teknillinen korkeakoulu, \hfill Kesä 2009\\
-		pääaine ohjelmistotekniikka, sivuaine laskennallinen tiede ja tekniikka.         	
-		
-		{\sl Ylioppilastutkinto,} Gymnasiet Lärkan 	\hfill Kevät 2005
-                % \sl will be bold italic in New Century Schoolbook (or
-	        % any postscript font) and just slanted in
-		% Computer Modern (default) font
- 
+{\addfontfeature{LetterSpace=20.0}\fontsize{36}{36}\selectfont\scshape Axel Eirola} % Your name at the top
 
-\section{TIETO\-TEKNIIKKA\-TAIDOT}
-% \- denotates that the word may be hyphenated, if needed, at the specified position
-		{\sl Ohjelmointikielet ja työkalut:} Python, C, Java, Scheme, Ruby, PHP, SQL, HTML, CSS, Apache, Eclipse, \LaTeX.  \\
-		{\sl Käyttöjärjestelmät:} Windows, Mac OS X, Linux.
+\vspace{1.5cm} % Extra whitespace after the large name at the top
 
-                
-\section{KIELI\-TAIDOT}
-		{\sl Ruotsi:} Äidinkieli \\
-		{\sl Suomi:} Erinomainen \\
-		{\sl Englanti:} Hyvä \\
-		{\sl Saksa:} Alkeet
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
 
- 
-\section{TYÖKOKEMUS}
-		{\sl Tutkimusapulainen,} TKK 	\hfill 2010 \\
-			Aalto Ylopiston Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion tutkimusapulaisena sekä opetustehtävissä.
+%\section{Objective}
 
-		{\sl Tuntiopettaja,} TKK 	\hfill 2009 \\
-			Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion kursseilla T-106.3101 ``Ohjelmoinnin jatkokurssi T2 (C-kieli)'' sekä T-106.1150 ``Tietokone ja käyttöjärjestelmä'' tunti\-assistenttina.
-		
-		{\sl Tutkimusapulainen,} TKK 	\hfill Kesä 2008 \\
-			Teknillisen korkeakoulun Tietojenkäsittelyteorian labaratorion tutkimusapulaisena 				ASP-tools projektin ohjelmistokehittäjänä.
-				
-		{\sl Tuntiopettaja,} TKK 	\hfill Syksy 2007 \\
-			Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion kurssin T-106.1002 
-			``Datorn som verktyg'', sekä suomen\-kielisen vastineen T-106.1001 
-			``Tieto\-kone työ\-välineenä'', tunti\-assistenttina.
+%A position in the field of computers with special interests in business applications \\ programming, information processing, and management systems.
 
-		{\sl Järjestelmätuki, } YLE 	\hfill Kesä 2007 \\
-			Määräaikaisessa kesätyössä Yleisradion uuden SAP R/3:en perustuvan HERA 
-			Henkilöstö\-hallinto\-järjestelmän tuki- ja testaustehtävissä.
-			
-		{\sl ATK-opettaja ja -ylläpitäjä, } Everest Academy, Nepal \hfill Syksy 2005 \\
-			Vapaaehtoistyönä neljä kuukautta paikallisessa englanninkielisessä koulussa Banepassa, Nepalissa.
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
 
-		{\sl Avustava ATK-ylläpitäjä, } Gymnasiet Lärkan \hfill 2003--2005 \\
-			Lukiossa avustavana ATK-ylläpitäjänä opiskeluaikana.
+\section{Work Experience}
 
-		{\sl Työharjoittelia, } Suomen Pankki	\hfill Syksy 2001 \\
-			Kaksi viikkoa Suomen Pankin ATK-ylläpidossa osana yläasteen työharjoittelua.
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{February 2010 --- Present}\\
+\gray Employer & \textbf{Trimico Oy} \hfill Vantaa, Finland\\
+\gray Job Title & \textbf{Software Developer}\\
+\gray Languages & \textbf{Java, JavaScript, SQL}\\
+       & Java enterprise software development in the field of transportation logistics. Main tasks include Java backend development using Spring, SQL database development using Hibernate, web front-end development using Wicket and AngularJS.
+\end{tabularx}
 
-\pagebreak
-\section{AJOKORTTI}Luokka  B, syksystä 2005 lähtien.
+\vspace{12pt}
 
- 
-\section{VARUSMIES\-PALVELUS}  
-		RT ROHJ TJM (Rannikkotykistön rakettiohjusjoukkueen tulenjohtomies) \\ 
-		Uudenmaan Prikaatissa 9.1 -- 7.7.2006, sotilasarvo korpraali.
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{January 2009 --- December 2010 (Part Time)}\\
+\gray Employer & \textbf{Aalto University} \hfill Espoo, Finland\\
+\gray Job Title & \textbf{Research and Course Assistant}\\
+       & Project research on web technologies for embedded systems, as well as assistance for the courses T-106.3101 “Intermediate Course in Programming T2 (the C language)" and T-106.1150 “Computer and Operating system”.
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+\gray Period & \textbf{September 2009 --- November 2012}\\
+\gray Degree & \textbf{Master of Science in Computer Science}\\
+\gray Rank & \textbf{With Distinction}\\
+\gray University & \textbf{Aalto University} \hfill Espoo, Finland\\
+%& Extra information about degree
+\end{tabularx}
+
+\vspace{12pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X} 
+\gray Period & \textbf{September 2006 --- August 2009}\\
+\gray Degree & \textbf{Bachelor of Science in Computer Science}\\
+\gray University & \textbf{Helsinki University of Techonolgy} \hfill Espoo, Finland\\
+%& Extra information about degree
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Computer Languages & Java, JavaScript, Python, C, Ruby, R \\
+Markup & HTML5, CSS3, \LaTeX, Markdown \\
+Databases & MySQL, PostgreSQL, MongoDB \\
+Tools & Git, Eclipse, Sublime Text
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	Portfolio
+%----------------------------------------------------------------------------------------
+
+\section{Portfolio}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Kimppis & \url{http://github.com/aeirola/kimppis} \\
+Train timetable & \url{http://github.com/aeirola/junat-taulukossa} \\
+Miscalenous & \url{http://koti.kapsi.fi/aeirola/stuff/} \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
 
 
-\section{LUOTTAMUS\-TOIMET}             
-            Tietokilta RY:n sisätoimikunnan aktiivijäsen. \hfill 2007--2009
-            
-\section{HARRASTUKSET}
-            {\sl Harrastukset: } Tietotekniikka, elektroniikka, pyöräily, sulkapallo, purjehdus.
+\end{center}
 
-\end{resume}
 \end{document}
