@@ -1,0 +1,107 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin]{res} 
+\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+
+% Language stuff for finnish
+\usepackage[finnish]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex,colorlinks,urlcolor=black]{hyperref}
+\urlstyle{same}
+\usepackage{datetime}
+
+\pdfinfo{
+ 		/Author (Axel Eirola)
+        /Title (Curriculum Vitae)
+		/CreationDate (D:20080114150700)
+		/ModDate (D:\pdfdate)
+		/Subject (CV)
+		/Keywords (Axel Eirola;CV)
+}
+
+% Expand left margin to make space for all long finnish words
+\sectionwidth=1.5in
+
+\begin{document}
+
+\name{Axel Eirola}
+% \address used twice to have two lines of address
+\address{Servinkuja 5B52, 02150 Espoo. 040-7265959}
+\address{\href{mailto:axel.eirola@gmail.com}{axel.eirola@gmail.com} \url{http://nonix.dy.fi/}}
+
+ 
+\begin{resume}
+ 
+
+\section{KOULUTUS} 
+		{\sl Diploomi-Insinööritutkinnon opiskelija,} Teknillinen korkeakoulu, \hfill Syksy 2009-- \\
+		pääaine ohjelmistojärjestelmät, sivuaine laskennallinen tiede ja tekniikka, 66/120 opinto\-pistettä.
+		
+		{\sl Tekniikan Kandidaatti,} Teknillinen korkeakoulu, \hfill Kesä 2009\\
+		pääaine ohjelmistotekniikka, sivuaine laskennallinen tiede ja tekniikka.         	
+		
+		{\sl Ylioppilastutkinto,} Gymnasiet Lärkan 	\hfill Kevät 2005
+                % \sl will be bold italic in New Century Schoolbook (or
+	        % any postscript font) and just slanted in
+		% Computer Modern (default) font
+ 
+
+\section{TIETO\-TEKNIIKKA\-TAIDOT}
+% \- denotates that the word may be hyphenated, if needed, at the specified position
+		{\sl Ohjelmointikielet ja työkalut:} Python, C, Java, Scheme, Ruby, PHP, SQL, HTML, CSS, Apache, Eclipse, \LaTeX.  \\
+		{\sl Käyttöjärjestelmät:} Windows, Mac OS X, Linux.
+
+                
+\section{KIELI\-TAIDOT}
+		{\sl Ruotsi:} Äidinkieli \\
+		{\sl Suomi:} Erinomainen \\
+		{\sl Englanti:} Hyvä \\
+		{\sl Saksa:} Alkeet
+
+ 
+\section{TYÖKOKEMUS}
+		{\sl Tutkimusapulainen,} TKK 	\hfill 2010 \\
+			Aalto Ylopiston Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion tutkimusapulaisena sekä opetustehtävissä.
+
+		{\sl Tuntiopettaja,} TKK 	\hfill 2009 \\
+			Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion kursseilla T-106.3101 ``Ohjelmoinnin jatkokurssi T2 (C-kieli)'' sekä T-106.1150 ``Tietokone ja käyttöjärjestelmä'' tunti\-assistenttina.
+		
+		{\sl Tutkimusapulainen,} TKK 	\hfill Kesä 2008 \\
+			Teknillisen korkeakoulun Tietojenkäsittelyteorian labaratorion tutkimusapulaisena 				ASP-tools projektin ohjelmistokehittäjänä.
+				
+		{\sl Tuntiopettaja,} TKK 	\hfill Syksy 2007 \\
+			Teknillisen korkeakoulun Ohjelmistotekniikan laboratorion kurssin T-106.1002 
+			``Datorn som verktyg'', sekä suomen\-kielisen vastineen T-106.1001 
+			``Tieto\-kone työ\-välineenä'', tunti\-assistenttina.
+
+		{\sl Järjestelmätuki, } YLE 	\hfill Kesä 2007 \\
+			Määräaikaisessa kesätyössä Yleisradion uuden SAP R/3:en perustuvan HERA 
+			Henkilöstö\-hallinto\-järjestelmän tuki- ja testaustehtävissä.
+			
+		{\sl ATK-opettaja ja -ylläpitäjä, } Everest Academy, Nepal \hfill Syksy 2005 \\
+			Vapaaehtoistyönä neljä kuukautta paikallisessa englanninkielisessä koulussa Banepassa, Nepalissa.
+
+		{\sl Avustava ATK-ylläpitäjä, } Gymnasiet Lärkan \hfill 2003--2005 \\
+			Lukiossa avustavana ATK-ylläpitäjänä opiskeluaikana.
+
+		{\sl Työharjoittelia, } Suomen Pankki	\hfill Syksy 2001 \\
+			Kaksi viikkoa Suomen Pankin ATK-ylläpidossa osana yläasteen työharjoittelua.
+
+\pagebreak
+\section{AJOKORTTI}Luokka  B, syksystä 2005 lähtien.
+
+ 
+\section{VARUSMIES\-PALVELUS}  
+		RT ROHJ TJM (Rannikkotykistön rakettiohjusjoukkueen tulenjohtomies) \\ 
+		Uudenmaan Prikaatissa 9.1 -- 7.7.2006, sotilasarvo korpraali.
+
+
+\section{LUOTTAMUS\-TOIMET}             
+            Tietokilta RY:n sisätoimikunnan aktiivijäsen. \hfill 2007--2009
+            
+\section{HARRASTUKSET}
+            {\sl Harrastukset: } Tietotekniikka, elektroniikka, pyöräily, sulkapallo, purjehdus.
+
+\end{resume}
+\end{document}
