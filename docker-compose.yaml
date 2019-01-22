@@ -1,0 +1,7 @@
+version: '3'
+services:
+  compile:
+    image: moss/xelatex
+    volumes:
+      - $PWD:/data
+    command: xelatex cv.tex
